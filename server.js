@@ -24,6 +24,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 
+app.get('/',(req,res) => {
+  res.send('it working')
+})
+
 app.get("/profile/:id", (req, res) => {
   profile.handlerProfile(req, res, db);
 });
